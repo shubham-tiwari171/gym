@@ -1,0 +1,40 @@
+.heading {
+  margin-top: 5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-style: oblique;
+}
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  position: relative;
+  margin-top: 1rem;
+  z-index: 5;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.slide {
+  position: relative;
+}
+
+.slide img {
+  width: 20rem; /* Adjust the width as per your requirement */
+  height: 20rem; /* Adjust the height as per your requirement */
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}

@@ -1,0 +1,128 @@
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 4rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.leftUpperRow {
+  height: 40vh;
+  width: 57vh;
+}
+
+.rightupperRow {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 40vh;
+  width: 100vh;
+}
+
+.rightupperRow > h1 {
+  color: #ef1b1b;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.rightupperRow > p {
+  display: flex;
+  align-items: flex-start;
+}
+
+.childText {
+  color: #555555;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 5px;
+  text-align: left !important;
+}
+
+.learnMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e02021;
+  width: 9rem;
+  color: white;
+  height: 3.2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  align-self: flex-start;
+  border: none;
+}
+
+.learnMore:hover {
+  cursor: pointer;
+  background: rgb(0, 0, 3);
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 3, 1) 0%,
+    rgba(133, 10, 21, 1) 35%
+  );
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1600px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .leftUpperRow,
+  .rightupperRow {
+    width: 100%;
+    height: auto;
+  }
+
+  .rightupperRow {
+    align-items: center;
+  }
+
+  .rightupperRow > h1 {
+    display: flex;
+    align-items: flex-start;
+    color: #ef1b1b;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 1601px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: initial;
+  }
+
+  .leftUpperRow {
+    width: 57vh;
+  }
+
+  .rightupperRow {
+    width: 100vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .iframeContainer {
+    width: 100%;
+    height: 20rem;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .iframeContainer {
+    width: 100%;
+    height: 30rem;
+  }
+}
