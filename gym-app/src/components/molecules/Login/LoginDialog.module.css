@@ -10,7 +10,7 @@
   right: 8px;
   color: gray;
 }
-.registrationContentLayout {
+.loginContentLayout {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,9 +47,4 @@
   justify-content: space-evenly;
   align-items: center;
   flex-basis: 49%;
-}
-.registerText {
-  flex-basis: 40%;
-  margin-bottom: 0.8rem;
-  margin-left: 1rem;
 }
