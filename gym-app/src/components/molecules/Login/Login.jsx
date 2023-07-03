@@ -10,7 +10,9 @@ import { getAllUser } from "../../../api/apiEndpoint";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { setUser, login } from "../../../redux/reducers/reducers";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../../../redux/reducers/reducers";
+
 const Login = () => {
   const [openSnackbar, setOpenSnackbar] = useState({
     open: false,
@@ -71,7 +73,7 @@ const Login = () => {
       setSnackbarMessage("Login successful!");
       setIsLoading(true);
       setTimeout(() => {
-        // dispatch(login());
+        dispatch(login());
         // dispatch(setUser(isUserExist));
         setIsLoading(false);
         navigate("/");

@@ -3,13 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    value: 0,
+    isUserLoggedIn: false,
   },
   reducers: {
-    increment: (state, action) => (state.value += 1),
-    decrement: (state, action) => (state.value -= 1),
+    login: (state, action) => {
+      state.isUserLoggedIn = true;
+    },
+    logout: (state, action) => {
+      state.isUserLoggedIn = false;
+    },
   },
 });
 
-export const { increment, decrement } = userSlice.actions;
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;

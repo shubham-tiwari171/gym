@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import { MdFormatAlignRight, MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-
+import { login, logout } from "../../../redux/reducers/reducers";
+import { useDispatch, useSelector } from "react-redux";
 const Navbar = ({ scrollToSection }) => {
   const [toggle, setToggle] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeLink, setActiveLink] = useState("Home");
-  const [openDialog, setOpenDialog] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const { isUserLoggedIn } = useSelector((state) => state.user);
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth);
@@ -32,8 +33,18 @@ const Navbar = ({ scrollToSection }) => {
     scrollToSection(link.toLowerCase()); // Convert text to lowercase
   };
 
-  const handleClick = () => {
-    navigate("/register");
+  const handleClick = (rautePath) => {
+    switch (rautePath) {
+      case "/logout":
+        dispatch(logout());
+        navigate("/login");
+        break;
+      case "/register":
+        navigate(rautePath);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -125,9 +136,21 @@ const Navbar = ({ scrollToSection }) => {
               Pricing
             </div>
             <div>
-              <button className={`${styles.joinButton}`} onClick={handleClick}>
-                Join
-              </button>
+              {isUserLoggedIn ? (
+                <button
+                  className={`${styles.joinButton}`}
+                  onClick={() => handleClick("/logout")}
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  className={`${styles.joinButton}`}
+                  onClick={() => handleClick("/register")}
+                >
+                  Join
+                </button>
+              )}
             </div>
           </>
         )}
