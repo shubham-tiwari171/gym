@@ -5,9 +5,9 @@ import { useRef } from "react";
 import { data } from "./data/TrainerData";
 import { useNavigate } from "react-router-dom";
 const Trainer = () => {
-  console.log(data);
   const navigate = useNavigate();
   const scrollRef = useRef();
+
   const handleLeftScroll = () => {
     scrollRef.current.scrollLeft -= 300;
   };
@@ -17,8 +17,6 @@ const Trainer = () => {
   };
 
   const handleShowAllTrainers = () => {
-    // Logic to handle "Show All Trainers" button click
-    // Implement the desired behavior here
     navigate("/showAllTrainers");
   };
 
@@ -27,8 +25,8 @@ const Trainer = () => {
       <div className={styles.trainerContainer}>
         <h1>Training Program</h1>
         <div ref={scrollRef} className={styles.slider}>
-          {data.map((trainer) => (
-            <div className={styles.slide}>
+          {data.map((trainer, index) => (
+            <div key={index} className={styles.slide}>
               <img src={trainer.urls.regular} alt={trainer.alt_description} />
             </div>
           ))}
@@ -41,10 +39,10 @@ const Trainer = () => {
             Show All Trainers
           </button>
           <button className={styles.button} onClick={handleLeftScroll}>
-            <MdArrowBack size={26} />
+            <MdArrowBack className={`${styles.mdArrowBack}`} size={26} />
           </button>
           <button className={styles.button} onClick={handleRightScroll}>
-            <MdArrowForward size={26} />
+            <MdArrowForward className={`${styles.mdArrowForward}`} size={26} />
           </button>
         </div>
       </div>

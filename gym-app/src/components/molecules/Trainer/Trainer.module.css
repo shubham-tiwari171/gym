@@ -56,6 +56,7 @@
   position: relative;
   z-index: 5;
 }
+
 .slider::-webkit-scrollbar {
   display: none;
 }
@@ -121,6 +122,12 @@
     margin: 0;
   }
 } */
+.mdArrowBack {
+  margin-top: 0.3rem;
+}
+.mdArrowForward {
+  margin-top: 0.3rem;
+}
 @media only screen and (min-width: 421px) and (max-width: 600px) {
   .trainerContainer {
     padding: 1rem;

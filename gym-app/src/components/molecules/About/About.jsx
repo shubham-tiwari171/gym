@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./About.module.css";
 const About = () => {
+  const handleAlertClick = () => {
+    alert("You are in about section");
+  };
   return (
     <section className={styles.aboutSection}>
       <div className={styles.row}>
@@ -10,8 +13,7 @@ const About = () => {
             height="355"
             src="https://www.youtube.com/embed/eaRQF-7hhmo?start=2"
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullScreen
+            fillRule="evenodd"
           ></iframe>
         </div>
         <div className={styles.rightupperRow}>
@@ -30,7 +32,9 @@ const About = () => {
               Lorem Ipsum.{" "}
             </span>
           </p>
-          <button className={styles.learnMore}>Learn more</button>
+          <button className={styles.learnMore} onClick={handleAlertClick}>
+            Learn more
+          </button>
         </div>
       </div>
       <div className={styles.row}>
@@ -61,9 +65,7 @@ const About = () => {
             height="355"
             src="https://www.youtube.com/embed/V-siUdyJ3Ac?start=4"
             title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            fillRule="evenodd"
           ></iframe>
         </div>
       </div>

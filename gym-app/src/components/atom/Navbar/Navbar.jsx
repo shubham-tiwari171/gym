@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import { MdFormatAlignRight, MdClose } from "react-icons/md";
-import RegistrationDialog from "../../molecules/RegistrationDialog/RegistrationDialog";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection }) => {
   const [toggle, setToggle] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeLink, setActiveLink] = useState("Home");
   const [openDialog, setOpenDialog] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleResize() {
@@ -28,14 +29,11 @@ const Navbar = () => {
 
   const handleActiveClicked = (link) => {
     setActiveLink(link);
+    scrollToSection(link.toLowerCase()); // Convert text to lowercase
   };
 
-  const handleDialogOpen = () => {
-    setOpenDialog(true);
-  };
-
-  const handleDialogClose = () => {
-    setOpenDialog(false);
+  const handleClick = () => {
+    navigate("/register");
   };
 
   return (
@@ -60,11 +58,11 @@ const Navbar = () => {
             </div>
             <div
               className={` ${
-                activeLink === "Program" ? `${styles.menuItemsBackground}` : ""
+                activeLink === "About" ? `${styles.menuItemsBackground}` : ""
               }`}
-              onClick={() => handleActiveClicked("Program")}
+              onClick={() => handleActiveClicked("About")}
             >
-              Program
+              About
             </div>
             <div
               className={` ${
@@ -83,12 +81,7 @@ const Navbar = () => {
               Pricing
             </div>
             <div>
-              <button
-                className={`${styles.joinButton}`}
-                onClick={handleDialogOpen}
-              >
-                Join
-              </button>
+              <button className={`${styles.joinButton}`}>Join</button>
             </div>
           </div>
         )}
@@ -109,11 +102,11 @@ const Navbar = () => {
             </div>
             <div
               className={` ${
-                activeLink === "Program" ? `${styles.menuItemsBackground}` : ""
+                activeLink === "About" ? `${styles.menuItemsBackground}` : ""
               }`}
-              onClick={() => handleActiveClicked("Program")}
+              onClick={() => handleActiveClicked("About")}
             >
-              Program
+              About
             </div>
             <div
               className={` ${
@@ -132,10 +125,7 @@ const Navbar = () => {
               Pricing
             </div>
             <div>
-              <button
-                className={`${styles.joinButton}`}
-                onClick={handleDialogOpen}
-              >
+              <button className={`${styles.joinButton}`} onClick={handleClick}>
                 Join
               </button>
             </div>
@@ -162,7 +152,6 @@ const Navbar = () => {
           <></>
         )}
       </div>
-      <RegistrationDialog open={openDialog} onClose={handleDialogClose} />
     </div>
   );
 };

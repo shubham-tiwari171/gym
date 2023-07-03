@@ -1,19 +1,15 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "ccbff41b-ad19-41bb-849b-7bccbb5b3144",
+      "userName": "Neha",
+      "email": "neha@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "mobile": "8881946755",
+      "gender": "female",
+      "profileImage": "./male_avatar.png",
+      "board": []
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
