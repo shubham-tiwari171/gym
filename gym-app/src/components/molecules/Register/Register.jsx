@@ -302,7 +302,7 @@ const Register = () => {
                 </div>
               </div>
 
-              <div className="mt-4 d-flex justify-content-around align-items-center">
+              <div className="mt-4 d-flex justify-content-between align-items-center">
                 <p>
                   Go back to login? <Link to="/login">Login</Link>
                 </p>

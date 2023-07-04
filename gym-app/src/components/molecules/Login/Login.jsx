@@ -69,7 +69,7 @@ const Login = () => {
       setSnackbarMessage("Login successful!");
       setIsLoading(true);
       setTimeout(() => {
-        dispatch(login());
+        dispatch(login(isUserExist));
         // dispatch(setUser(isUserExist));
         setIsLoading(false);
         navigate("/");

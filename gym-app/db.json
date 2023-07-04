@@ -10,6 +10,17 @@
       "gender": "female",
       "profileImage": "./male_avatar.png",
       "board": []
+    },
+    {
+      "id": "bacc4a0d-a6b7-41f0-9aac-819b7257ce47",
+      "userName": "shubham",
+      "email": "tshubhamucem@gmail.com",
+      "password": "@tshubham1",
+      "confirmPassword": "@tshubham1",
+      "mobile": "8881946755",
+      "gender": "male",
+      "profileImage": "./male_avatar.png",
+      "board": []
     }
   ]
 }

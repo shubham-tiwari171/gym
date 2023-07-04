@@ -6,7 +6,7 @@ import Trainer from "../Trainer/Trainer";
 import Price from "../../atom/Price/Price";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
-
+import { useSelector } from "react-redux";
 function Home() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
@@ -15,7 +15,8 @@ function Home() {
   const trainerRef = useRef(null);
   const priceRef = useRef(null);
   const programRef = useRef(null);
-
+  const { isUserLoggedIn, userObject } = useSelector((state) => state.user);
+  console.log(userObject);
   const sectionRefs = {
     home: homeRef,
     about: aboutRef,
@@ -59,18 +60,36 @@ function Home() {
         <Navbar scrollToSection={scrollToSection} />
         <div className={styles.content}>
           <div className={styles.leftSide}>
-            <p className={styles.contentText}>
-              Take care of your{" "}
-              <span className={`${styles.highlightedText}`}>body</span>
-              {!isSmallWindow && <br />}It's the only place
-              {!isSmallWindow && <br />}you have to{" "}
-              <span className={`${styles.highlightedText}`}>live</span>
-            </p>
-            <div>
-              <button className={styles.joinButton} onClick={handleClick}>
-                Join with us
-              </button>
-            </div>
+            {!isUserLoggedIn && (
+              <p className={styles.contentText}>
+                Take care of your{" "}
+                <span className={`${styles.highlightedText}`}>body</span>
+                {!isSmallWindow && <br />}It's the only place
+                {!isSmallWindow && <br />}you have to{" "}
+                <span className={`${styles.highlightedText}`}>live</span>
+              </p>
+            )}
+            {isUserLoggedIn && (
+              <p className={styles.contentText}>
+                Welcome {""}
+                <span className={`${styles.highlightedText}`}>
+                  {userObject.userName.charAt(0).toUpperCase() +
+                    userObject.userName.slice(1)}
+                </span>{" "}
+                to our gym your{" "}
+                <span className={`${styles.highlightedText}`}>HEALTH</span> is
+                our concern now
+              </p>
+            )}
+            {isUserLoggedIn === true ? (
+              <></>
+            ) : (
+              <div>
+                <button className={styles.joinButton} onClick={handleClick}>
+                  Join with us
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
