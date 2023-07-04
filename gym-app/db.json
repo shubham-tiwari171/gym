@@ -21,6 +21,17 @@
       "gender": "male",
       "profileImage": "./male_avatar.png",
       "board": []
+    },
+    {
+      "id": "81b41c15-e25a-4fa7-9dd2-259af570854f",
+      "userName": "Neha2",
+      "email": "neha2@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "mobile": "6545425598",
+      "gender": "female",
+      "profileImage": "./male_avatar.png",
+      "board": []
     }
   ]
 }
