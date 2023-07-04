@@ -33,10 +33,6 @@ const Login = () => {
     validationSchema: signUpSignInSchema,
   });
 
-  const containerStyle = {
-    backgroundImage: `url("./loading.gif")`,
-  };
-
   useEffect(() => {
     const fetchUsers = async () => {
       setIsLoading(true);
@@ -182,11 +178,11 @@ const Login = () => {
 
                     <div className="mt-4 d-flex justify-content-between align-items-center">
                       <p>
-                        Don't have an account?{" "}
+                        Don't have an account?
                         <Link to="/register">Sign up</Link>
                       </p>
                       <button
-                        className="btn btn-primary btn-lg"
+                        className="btn btn-danger btn-lg"
                         type="submit"
                         style={{ marginTop: "-13px" }}
                       >

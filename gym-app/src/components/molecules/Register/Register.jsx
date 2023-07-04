@@ -308,7 +308,7 @@ const Register = () => {
                 </p>
                 <button
                   disabled={createButtonDisabled}
-                  className="btn btn-danger"
+                  className="btn btn-danger btn-lg"
                   type="submit"
                 >
                   Register
