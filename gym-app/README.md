@@ -1,10 +1,10 @@
-# Pixico - Your Source for High-Quality Images
+# Gym - Your body can do it.
 
 The Gym Website is a dynamic fitness center website. It features a sticky header, user registration/login, an engaging About Us section with a YouTube video, scrollable Training Programs, a Trainer section, Pricing details, and social media integration. The project showcases web development, UX design, and library utilization skills.
 
 ## Project Page
 
-Check out Pixico here: [Gym Website](https://prismatic-sunburst-318848.netlify.app)
+Check out Gym here: [Gym Website](https://prismatic-sunburst-318848.netlify.app)
 
 ## Tech Stack
 
